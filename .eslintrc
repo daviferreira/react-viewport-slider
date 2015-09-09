@@ -8,9 +8,6 @@
     "modules": true,
     "jsx": true
   },
-  "plugins": [
-    "react"
-  ],
   "rules": {
     "curly": 0,
     "radix": 2,
