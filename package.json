@@ -1,7 +1,7 @@
 {
-  "name": "react-component-boilerplate",
+  "name": "react-component-starter-kit",
   "version": "0.0.1",
-  "description": "Simple React component boilerplate stuff.",
+  "description": "Simple React component starter kit stuff.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "react",
     "reactjs",
     "react-component",
-    "boilerplate"
+    "starter-kit"
   ],
   "author": "Davi Ferreira <hi@daviferreira.com>",
   "license": "MIT",
