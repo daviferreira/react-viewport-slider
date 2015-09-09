@@ -1,6 +1,6 @@
-# React Component Boilerplate
+# React Component Starter Kit
 
-This is supposed to be a simple boilerplate for creating Open Source React
+This is supposed to be a simple starter-kit for creating Open Source React
 Components. It should include/support:
 
 * a nice README
@@ -16,12 +16,12 @@ Components. It should include/support:
 
 A magic description.
 
-[![NPM info](https://nodei.co/npm/react-component-boilerplate.png?downloads=true)](https://www.npmjs.com/package/medium-editor)
+[![NPM info](https://nodei.co/npm/react-component-starter-kit.png?downloads=true)](https://www.npmjs.com/package/medium-editor)
 
-[![Travis build status](https://travis-ci.org/daviferreira/react-component-boilerplate.svg?branch=master)](https://travis-ci.org/daviferreira/medium-editor)
-[![Dependency Status](https://david-dm.org/daviferreira/react-component-boilerplate.svg)](https://david-dm.org/daviferreira/medium-editor)
-[![devDependency Status](https://david-dm.org/daviferreira/react-component-boilerplate/dev-status.svg)](https://david-dm.org/daviferreira/medium-editor#info=devDependencies)
-[![Coverage Status](https://coveralls.io/repos/daviferreira/react-component-boilerplate/badge.svg?branch=master&service=github)](https://coveralls.io/github/daviferreira/medium-editor?branch=master)
+[![Travis build status](https://travis-ci.org/daviferreira/react-component-starter-kit.svg?branch=master)](https://travis-ci.org/daviferreira/medium-editor)
+[![Dependency Status](https://david-dm.org/daviferreira/react-component-starter-kit.svg)](https://david-dm.org/daviferreira/medium-editor)
+[![devDependency Status](https://david-dm.org/daviferreira/react-component-starter-kit/dev-status.svg)](https://david-dm.org/daviferreira/medium-editor#info=devDependencies)
+[![Coverage Status](https://coveralls.io/repos/daviferreira/react-component-starter-kit/badge.svg?branch=master&service=github)](https://coveralls.io/github/daviferreira/medium-editor?branch=master)
 
 ## Usage
 
@@ -31,4 +31,4 @@ A magic description.
 
 ## LICENSE
 
-MIT: https://github.com/daviferreira/react-component-boilerplate/blob/master/LICENSE
+MIT: https://github.com/daviferreira/react-component-starter-kit/blob/master/LICENSE
