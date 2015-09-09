@@ -2,9 +2,19 @@
   "name": "react-component-starter-kit",
   "version": "0.0.1",
   "description": "Simple React component starter kit stuff.",
-  "main": "index.js",
+  "main": "./dist/modules/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle-demo": "webpack --config webpack.config.demo.js",
+    "bundle-dist": "webpack --config webpack.config.dist.js",
+    "bundle-modules": "trash dist/modules/* --force && babel src --loose --out-dir dist/modules",
+    "bundle": "npm run bundle-demo && npm run bundle-dist && npm run bundle-modules",
+    "demo": "webpack-dev-server --config webpack.config.demo.js",
+    "lint": "eslint ./src",
+    "test": "npm run lint && mocha -R spec --compilers jsx:test/compiler.js ./src/*Test.jsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daviferreira/react-component-starter-kit.git"
   },
   "keywords": [
     "react",
