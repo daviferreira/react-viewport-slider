@@ -16,12 +16,12 @@ Components. It should include/support:
 
 A magic description.
 
-[![NPM info](https://nodei.co/npm/react-component-starter-kit.png?downloads=true)](https://www.npmjs.com/package/medium-editor)
+[![NPM info](https://nodei.co/npm/react-component-starter-kit.png?downloads=true)](https://www.npmjs.com/package/react-component-starter-kit)
 
-[![Travis build status](https://travis-ci.org/daviferreira/react-component-starter-kit.svg?branch=master)](https://travis-ci.org/daviferreira/medium-editor)
-[![Dependency Status](https://david-dm.org/daviferreira/react-component-starter-kit.svg)](https://david-dm.org/daviferreira/medium-editor)
-[![devDependency Status](https://david-dm.org/daviferreira/react-component-starter-kit/dev-status.svg)](https://david-dm.org/daviferreira/medium-editor#info=devDependencies)
-[![Coverage Status](https://coveralls.io/repos/daviferreira/react-component-starter-kit/badge.svg?branch=master&service=github)](https://coveralls.io/github/daviferreira/medium-editor?branch=master)
+[![Travis build status](https://travis-ci.org/daviferreira/react-component-starter-kit.svg?branch=master)](https://travis-ci.org/daviferreira/react-component-starter-kit)
+[![Dependency Status](https://david-dm.org/daviferreira/react-component-starter-kit.svg)](https://david-dm.org/daviferreira/react-component-starter-kit)
+[![devDependency Status](https://david-dm.org/daviferreira/react-component-starter-kit/dev-status.svg)](https://david-dm.org/daviferreira/react-component-starter-kit#info=devDependencies)
+[![Coverage Status](https://coveralls.io/repos/daviferreira/react-component-starter-kit/badge.svg?branch=master&service=github)](https://coveralls.io/github/daviferreira/react-component-starter-kit?branch=master)
 
 ## Usage
 
