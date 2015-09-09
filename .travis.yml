@@ -1,0 +1,15 @@
+# faster builds on new travis setup not using sudo
+sudo: false
+
+# cache vendor dirs
+cache:
+    directories:
+        - node_modules
+
+language: node_js
+
+notifications:
+    email: false
+
+node_js:
+  - "4.0"
