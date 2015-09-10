@@ -10,6 +10,23 @@ Components. It should include/support:
 * .dotfiles
 * example + demo (gh-pages, maybe?)
 
+### Getting Started
+
+Just clone or [fork](https://github.com/daviferreira/react-component-starter-kit/fork) the repo and start hacking:
+
+```shell
+$ git clone -o my-component -b master --single-branch https://github.com/daviferreira/react-component-starter-kit.git MyComponent
+```
+
+### Commands
+
+```shell
+$ cd MyComponent
+$ npm install                   # Install development dependencies
+$ npm run bundle                # Build scripts
+$ npm run demo                  # Run webpack dev server
+```
+
 ---
 
 # Your Component Name Here
