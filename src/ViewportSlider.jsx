@@ -17,11 +17,14 @@ export default class ViewportSlider extends Component {
   }
 
   setActive(index) {
-    console.log(index);
     this.setState({ activeIndex: index });
   }
 
   render() {
+    if (!this.props.children) {
+      return null;
+    }
+
     return (
       <div className="viewport-slider">
         <Paginator bullets={this.props.children.length}

@@ -12,7 +12,13 @@ describe('ViewportSlider Test Case', () => {
   jsdom();
 
   it('should render', () => {
-    var instance = TestUtils.renderIntoDocument(<ViewportSlider />);
+    var instance = TestUtils.renderIntoDocument(
+      <ViewportSlider>
+        <div>Slide 1</div>
+        <div>Slide 2</div>
+        <div>Slide 3</div>
+      </ViewportSlider>
+    );
     expect(instance, 'to be defined');
   });
 
