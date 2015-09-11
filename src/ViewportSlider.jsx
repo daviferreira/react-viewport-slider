@@ -2,30 +2,47 @@
 
 import { Element } from 'react-scroll';
 import React, { Component, PropTypes } from 'react';
+
 import Item from './Item';
+import Paginator from './Paginator';
 
 export default class ViewportSlider extends Component {
 
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = { activeIndex: 1 };
+
+    this.setActive = this.setActive.bind(this);
+  }
+
+  setActive(index) {
+    console.log(index);
+    this.setState({ activeIndex: index });
   }
 
   render() {
     return (
       <div className="viewport-slider">
+        <Paginator bullets={this.props.children.length}
+          onClick={this.setActive}
+          activeIndex={this.state.activeIndex} />
+
         {this.props.children.map((child, key) => {
+          let index = key + 1;
+
           return (
-            <Element name={`slide-${key}`} key={key}>
+            <Element name={`slide-${index}`} key={index}>
               <Item {...child.props}
-                index={key}
-                hideButton={key + 1 === this.props.children.length}>
+                index={index}
+                hideButton={index === this.props.children.length}
+                onClick={this.setActive}>
                 {child}
               </Item>
             </Element>
           );
         })}
+
       </div>
     );
   }

@@ -2,20 +2,26 @@
 
 import classNames from 'classnames';
 import { Link } from 'react-scroll';
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default (props) => {
+var Button = (props) => {
 
   const style = {
     bottom: '50px',
     left: '50%',
     position: 'absolute',
-    transform: 'translateX(-50%)'
+    transform: 'translateX(-50%)',
+    zIndex: 2
   }
+
+  var handleClick = () => {
+    props.onClick(props.index + 1);
+  };
 
   return (
     <Link className="viewport-slider-button"
       duration={500}
+      onClick={handleClick}
       smooth={true}
       to={`slide-${props.index + 1}`}
       style={style}>
@@ -24,3 +30,10 @@ export default (props) => {
   );
 
 };
+
+Button.propTypes = {
+  index: PropTypes.number.isRequired,
+  onClick: PropTypes.func
+};
+
+export default Button;

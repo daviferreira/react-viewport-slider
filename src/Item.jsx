@@ -25,7 +25,7 @@ var Item = (props) => {
 
   var renderButton = () => {
     return (
-      <Button index={props.index}>
+      <Button index={props.index} onClick={props.onClick}>
         {props.buttonLabel}
       </Button>
     );
@@ -51,7 +51,8 @@ Item.propTypes = {
   hideButton: PropTypes.bool,
   index: PropTypes.number.isRequired,
   itemClass: PropTypes.string,
-  itemStyle: PropTypes.object
+  itemStyle: PropTypes.object,
+  onClick: PropTypes.func
 };
 
 export default Item;
