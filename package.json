@@ -41,6 +41,7 @@
     "eslint": "1.3.1",
     "jsdom": "6.3.0",
     "mocha-jsdom": "1.0.0",
+    "normalize.css": "3.0.3",
     "react-addons-test-utils": "0.14.0-rc1",
     "react-scroll": "git://github.com/daviferreira/react-scroll",
     "sinon": "1.16.1",

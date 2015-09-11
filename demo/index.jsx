@@ -1,5 +1,6 @@
 'use strict';
 
+require('normalize.css');
 require('./demo.css');
 
 import React from 'react';
@@ -16,13 +17,13 @@ class Demo extends React.Component {
     return (
       <ViewportSlider>
         <div itemStyle={{ backgroundColor: '#a2d7c7' }}>
-          <h1>Hello, world.</h1>
+          <div className="content">Hello, world.</div>
         </div>
         <div itemStyle={{ backgroundColor: '#353330' }}>
-          <h1>Sup?</h1>
+          <div className="content">Sup?</div>
         </div>
         <div itemClass="has-overlay" itemStyle={{ backgroundImage: `url(${wallpaper})`, backgroundSize: 'cover' }}>
-          <h1>Yo.</h1>
+          <div className="content">Yo.</div>
         </div>
       </ViewportSlider>
     );
