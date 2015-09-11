@@ -6,11 +6,8 @@ import React, { PropTypes } from 'react';
 var Bullet = (props) => {
 
   const style = {
-    background: '#fff',
     display: 'block',
     height: '20px',
-    opacity: props.active ? 1 : 0.2,
-    transition: 'opacity .35s',
     width: '20px'
   }
 
@@ -23,6 +20,7 @@ var Bullet = (props) => {
       duration={500}
       smooth={true}
       onClick={handleClick}
+      spy={true}
       style={style}
       to={`slide-${props.index}`} />
   );

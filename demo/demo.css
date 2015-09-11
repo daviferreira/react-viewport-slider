@@ -30,6 +30,25 @@ body {
   opacity: 1;
 }
 
+.viewport-slider-paginator {
+  border: 1px solid #fff;
+}
+
+.viewport-slider-paginator-bullet {
+  background: #fff;
+  cursor: pointer;
+  opacity: .4;
+  transition: opacity .35s;
+}
+
+.viewport-slider-paginator-bullet:hover {
+  opacity: .6;
+}
+
+.viewport-slider-paginator-bullet.active {
+  opacity: 1;
+}
+
 h1 {
   font-size: 6em;
   letter-spacing: -1px;
