@@ -1,5 +1,5 @@
 'use strict';
 
-import YourComponent from './YourComponent';
+import ViewportSlider from './ViewportSlider';
 
-export default { YourComponent };
+export default { ViewportSlider };

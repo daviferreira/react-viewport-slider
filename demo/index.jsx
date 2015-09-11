@@ -2,13 +2,13 @@
 
 import React from 'react/addons';
 
-import YourComponent from '../src/YourComponent';
+import ViewportSlider from '../src/ViewportSlider';
 
 class Demo extends React.Component {
 
   render() {
     return (
-      <YourComponent />
+      <ViewportSlider />
     );
   }
 
