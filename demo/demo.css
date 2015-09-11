@@ -1,0 +1,53 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+}
+
+.viewport-slider-item {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.viewport-slider-button {
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  opacity: .5;
+  padding: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity .35s;
+}
+
+.viewport-slider-button:hover {
+  opacity: 1;
+}
+
+h1 {
+  font-size: 6em;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.has-overlay::after {
+  content: '';
+  background-color: #d5af86;
+  left: 0;
+  height: 100%;
+  opacity: .7;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.has-overlay > div {
+  z-index: 2;
+}
