@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
+import Item from './ViewportSliderItem';
 
 export default class ViewportSlider extends Component {
 
@@ -13,7 +14,7 @@ export default class ViewportSlider extends Component {
   render() {
     return (
       <div className="viewport-slider">
-        Hello, world!
+        {this.props.children}
       </div>
     );
   }
