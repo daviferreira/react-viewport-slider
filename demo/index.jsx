@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import ViewportSlider from '../src/ViewportSlider';
-import Item from '../src/ViewportSliderItem';
+import Item from '../src/Item';
 
 // http://alpha.wallhaven.cc/wallpaper/164335
 const wallpaper = 'http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-164335.png';

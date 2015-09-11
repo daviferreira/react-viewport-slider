@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import Item from './ViewportSliderItem';
+import Item from './Item';
 
 export default class ViewportSlider extends Component {
 
