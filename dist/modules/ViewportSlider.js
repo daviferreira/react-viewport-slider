@@ -12,31 +12,31 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var YourComponent = (function (_Component) {
-  _inherits(YourComponent, _Component);
+var ViewportSlider = (function (_Component) {
+  _inherits(ViewportSlider, _Component);
 
-  function YourComponent(props) {
-    _classCallCheck(this, YourComponent);
+  function ViewportSlider(props) {
+    _classCallCheck(this, ViewportSlider);
 
     _Component.call(this, props);
 
     this.state = {};
   }
 
-  YourComponent.prototype.render = function render() {
+  ViewportSlider.prototype.render = function render() {
     return _react2['default'].createElement(
       'div',
-      { className: 'your-component' },
+      { className: 'viewport-slider' },
       'Hello, world!'
     );
   };
 
-  return YourComponent;
+  return ViewportSlider;
 })(_react.Component);
 
-exports['default'] = YourComponent;
+exports['default'] = ViewportSlider;
 
-YourComponent.defaultProps = {};
+ViewportSlider.defaultProps = {};
 
-YourComponent.propTypes = {};
+ViewportSlider.propTypes = {};
 module.exports = exports['default'];

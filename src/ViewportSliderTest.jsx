@@ -2,11 +2,10 @@
 
 import expect from 'unexpected';
 import jsdom from 'mocha-jsdom';
-import React from 'react/addons'
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
 import ViewportSlider from './ViewportSlider';
-
-var TestUtils = React.addons.TestUtils;
 
 describe('ViewportSlider Test Case', () => {
 

@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define(["React"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactComponentStarterKit"] = factory(require("React"));
+		exports["ViewportSlider"] = factory(require("React"));
 	else
-		root["ReactComponentStarterKit"] = factory(root["React"]);
+		root["ViewportSlider"] = factory(root["React"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -60,11 +60,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _YourComponent = __webpack_require__(1);
+	var _ViewportSlider = __webpack_require__(1);
 
-	var _YourComponent2 = _interopRequireDefault(_YourComponent);
+	var _ViewportSlider2 = _interopRequireDefault(_ViewportSlider);
 
-	exports['default'] = { YourComponent: _YourComponent2['default'] };
+	exports['default'] = { ViewportSlider: _ViewportSlider2['default'] };
 	module.exports = exports['default'];
 
 /***/ },
@@ -85,33 +85,33 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var YourComponent = (function (_Component) {
-	  _inherits(YourComponent, _Component);
+	var ViewportSlider = (function (_Component) {
+	  _inherits(ViewportSlider, _Component);
 
-	  function YourComponent(props) {
-	    _classCallCheck(this, YourComponent);
+	  function ViewportSlider(props) {
+	    _classCallCheck(this, ViewportSlider);
 
 	    _Component.call(this, props);
 
 	    this.state = {};
 	  }
 
-	  YourComponent.prototype.render = function render() {
+	  ViewportSlider.prototype.render = function render() {
 	    return _react2['default'].createElement(
 	      'div',
-	      { className: 'your-component' },
+	      { className: 'viewport-slider' },
 	      'Hello, world!'
 	    );
 	  };
 
-	  return YourComponent;
+	  return ViewportSlider;
 	})(_react.Component);
 
-	exports['default'] = YourComponent;
+	exports['default'] = ViewportSlider;
 
-	YourComponent.defaultProps = {};
+	ViewportSlider.defaultProps = {};
 
-	YourComponent.propTypes = {};
+	ViewportSlider.propTypes = {};
 	module.exports = exports['default'];
 
 /***/ },
