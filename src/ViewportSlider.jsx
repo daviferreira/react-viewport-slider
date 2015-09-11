@@ -45,7 +45,6 @@ export default class ViewportSlider extends Component {
             </Element>
           );
         })}
-
       </div>
     );
   }
