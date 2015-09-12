@@ -1,5 +1,5 @@
 'use strict';
 
-import ViewportSlider from './ViewportSlider';
+import Slider from './Slider';
 
-export default { ViewportSlider };
+export default { Slider };

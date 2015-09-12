@@ -6,7 +6,7 @@ import React, { Component, PropTypes } from 'react';
 import Item from './Item';
 import Paginator from './Paginator';
 
-export default class ViewportSlider extends Component {
+export default class Slider extends Component {
 
   constructor(props) {
     super(props);
@@ -51,6 +51,7 @@ export default class ViewportSlider extends Component {
 
 }
 
-ViewportSlider.defaultProps = {};
+Slider.defaultProps = {};
 
-ViewportSlider.propTypes = {};
+Slider.propTypes = {};
+  

@@ -5,19 +5,19 @@ import jsdom from 'mocha-jsdom';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
-import ViewportSlider from './ViewportSlider';
+import Slider from './Slider';
 
-describe('ViewportSlider Test Case', () => {
+describe('Slider Test Case', () => {
 
   jsdom();
 
   it('should render', () => {
     var instance = TestUtils.renderIntoDocument(
-      <ViewportSlider>
+      <Slider>
         <div>Slide 1</div>
         <div>Slide 2</div>
         <div>Slide 3</div>
-      </ViewportSlider>
+      </Slider>
     );
     expect(instance, 'to be defined');
   });

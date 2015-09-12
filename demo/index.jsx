@@ -6,7 +6,7 @@ require('./demo.css');
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ViewportSlider from '../src/ViewportSlider';
+import Slider from '../src/Slider';
 
 // http://alpha.wallhaven.cc/wallpaper/164335
 const wallpaper = 'http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-164335.png';
@@ -15,7 +15,7 @@ class Demo extends React.Component {
 
   render() {
     return (
-      <ViewportSlider>
+      <Slider>
         <div itemStyle={{ backgroundColor: '#a2d7c7' }}>
           <div className="content">Hello, world.</div>
         </div>
@@ -25,7 +25,7 @@ class Demo extends React.Component {
         <div itemClass="has-overlay" itemStyle={{ backgroundImage: `url(${wallpaper})`, backgroundSize: 'cover' }}>
           <div className="content">Yo.</div>
         </div>
-      </ViewportSlider>
+      </Slider>
     );
   }
 
