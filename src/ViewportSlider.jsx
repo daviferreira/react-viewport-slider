@@ -27,9 +27,9 @@ export default class ViewportSlider extends Component {
 
     return (
       <div className="viewport-slider">
-        <Paginator bullets={this.props.children.length}
-          onClick={this.setActive}
-          activeIndex={this.state.activeIndex} />
+        <Paginator activeIndex={this.state.activeIndex}
+          bullets={this.props.children.length}
+          onClick={this.setActive} />
 
         {this.props.children.map((child, key) => {
           let index = key + 1;

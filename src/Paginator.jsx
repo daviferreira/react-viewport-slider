@@ -21,7 +21,6 @@ var Paginator = (props) => {
         return (
           <Bullet key={i}
             index={i}
-            active={i === props.activeIndex}
             onClick={props.onClick} />
         );
       })}

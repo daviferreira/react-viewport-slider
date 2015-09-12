@@ -27,12 +27,7 @@ var Bullet = (props) => {
 
 };
 
-Bullet.defaultProps = {
-  active: false
-};
-
 Bullet.propTypes = {
-  active: PropTypes.bool,
   index: PropTypes.number.isRequired,
   onClick: PropTypes.func
 };
