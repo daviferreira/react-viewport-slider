@@ -2,5 +2,5 @@ node_modules
 npm-debug.log
 *.swp
 .DS_Store
-**/*-bundle.*.js
-demo/bundle.js
+**/*-bundle.*.js*
+demo/bundle.js*
