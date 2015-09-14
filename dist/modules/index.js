@@ -8,5 +8,5 @@ var _Slider = require('./Slider');
 
 var _Slider2 = _interopRequireDefault(_Slider);
 
-exports['default'] = { Slider: _Slider2['default'] };
+exports['default'] = _Slider2['default'];
 module.exports = exports['default'];
