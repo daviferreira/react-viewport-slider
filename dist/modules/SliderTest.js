@@ -18,17 +18,17 @@ var _reactAddonsTestUtils = require('react-addons-test-utils');
 
 var _reactAddonsTestUtils2 = _interopRequireDefault(_reactAddonsTestUtils);
 
-var _ViewportSlider = require('./ViewportSlider');
+var _Slider = require('./Slider');
 
-var _ViewportSlider2 = _interopRequireDefault(_ViewportSlider);
+var _Slider2 = _interopRequireDefault(_Slider);
 
-describe('ViewportSlider Test Case', function () {
+describe('Slider Test Case', function () {
 
   _mochaJsdom2['default']();
 
   it('should render', function () {
     var instance = _reactAddonsTestUtils2['default'].renderIntoDocument(_react2['default'].createElement(
-      _ViewportSlider2['default'],
+      _Slider2['default'],
       null,
       _react2['default'].createElement(
         'div',

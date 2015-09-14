@@ -32,7 +32,6 @@ var Paginator = function Paginator(props) {
     }).map(function (i) {
       return _react2['default'].createElement(_Bullet2['default'], { key: i,
         index: i,
-        active: i === props.activeIndex,
         onClick: props.onClick });
     })
   );

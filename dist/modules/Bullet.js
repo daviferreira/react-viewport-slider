@@ -31,12 +31,7 @@ var Bullet = function Bullet(props) {
     to: 'slide-' + props.index });
 };
 
-Bullet.defaultProps = {
-  active: false
-};
-
 Bullet.propTypes = {
-  active: _react.PropTypes.bool,
   index: _react.PropTypes.number.isRequired,
   onClick: _react.PropTypes.func
 };

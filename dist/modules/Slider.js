@@ -24,11 +24,11 @@ var _Paginator = require('./Paginator');
 
 var _Paginator2 = _interopRequireDefault(_Paginator);
 
-var ViewportSlider = (function (_Component) {
-  _inherits(ViewportSlider, _Component);
+var Slider = (function (_Component) {
+  _inherits(Slider, _Component);
 
-  function ViewportSlider(props) {
-    _classCallCheck(this, ViewportSlider);
+  function Slider(props) {
+    _classCallCheck(this, Slider);
 
     _Component.call(this, props);
 
@@ -37,11 +37,11 @@ var ViewportSlider = (function (_Component) {
     this.setActive = this.setActive.bind(this);
   }
 
-  ViewportSlider.prototype.setActive = function setActive(index) {
+  Slider.prototype.setActive = function setActive(index) {
     this.setState({ activeIndex: index });
   };
 
-  ViewportSlider.prototype.render = function render() {
+  Slider.prototype.render = function render() {
     var _this = this;
 
     if (!this.props.children) {
@@ -51,9 +51,9 @@ var ViewportSlider = (function (_Component) {
     return _react2['default'].createElement(
       'div',
       { className: 'viewport-slider' },
-      _react2['default'].createElement(_Paginator2['default'], { bullets: this.props.children.length,
-        onClick: this.setActive,
-        activeIndex: this.state.activeIndex }),
+      _react2['default'].createElement(_Paginator2['default'], { activeIndex: this.state.activeIndex,
+        bullets: this.props.children.length,
+        onClick: this.setActive }),
       this.props.children.map(function (child, key) {
         var index = key + 1;
 
@@ -73,12 +73,12 @@ var ViewportSlider = (function (_Component) {
     );
   };
 
-  return ViewportSlider;
+  return Slider;
 })(_react.Component);
 
-exports['default'] = ViewportSlider;
+exports['default'] = Slider;
 
-ViewportSlider.defaultProps = {};
+Slider.defaultProps = {};
 
-ViewportSlider.propTypes = {};
+Slider.propTypes = {};
 module.exports = exports['default'];

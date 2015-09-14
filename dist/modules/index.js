@@ -4,9 +4,9 @@ exports.__esModule = true;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _ViewportSlider = require('./ViewportSlider');
+var _Slider = require('./Slider');
 
-var _ViewportSlider2 = _interopRequireDefault(_ViewportSlider);
+var _Slider2 = _interopRequireDefault(_Slider);
 
-exports['default'] = { ViewportSlider: _ViewportSlider2['default'] };
+exports['default'] = { Slider: _Slider2['default'] };
 module.exports = exports['default'];

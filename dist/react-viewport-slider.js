@@ -60,11 +60,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _ViewportSlider = __webpack_require__(1);
+	var _Slider = __webpack_require__(1);
 
-	var _ViewportSlider2 = _interopRequireDefault(_ViewportSlider);
+	var _Slider2 = _interopRequireDefault(_Slider);
 
-	exports['default'] = { ViewportSlider: _ViewportSlider2['default'] };
+	exports['default'] = { Slider: _Slider2['default'] };
 	module.exports = exports['default'];
 
 /***/ },
@@ -97,11 +97,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _Paginator2 = _interopRequireDefault(_Paginator);
 
-	var ViewportSlider = (function (_Component) {
-	  _inherits(ViewportSlider, _Component);
+	var Slider = (function (_Component) {
+	  _inherits(Slider, _Component);
 
-	  function ViewportSlider(props) {
-	    _classCallCheck(this, ViewportSlider);
+	  function Slider(props) {
+	    _classCallCheck(this, Slider);
 
 	    _Component.call(this, props);
 
@@ -110,11 +110,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.setActive = this.setActive.bind(this);
 	  }
 
-	  ViewportSlider.prototype.setActive = function setActive(index) {
+	  Slider.prototype.setActive = function setActive(index) {
 	    this.setState({ activeIndex: index });
 	  };
 
-	  ViewportSlider.prototype.render = function render() {
+	  Slider.prototype.render = function render() {
 	    var _this = this;
 
 	    if (!this.props.children) {
@@ -124,9 +124,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return _react2['default'].createElement(
 	      'div',
 	      { className: 'viewport-slider' },
-	      _react2['default'].createElement(_Paginator2['default'], { bullets: this.props.children.length,
-	        onClick: this.setActive,
-	        activeIndex: this.state.activeIndex }),
+	      _react2['default'].createElement(_Paginator2['default'], { activeIndex: this.state.activeIndex,
+	        bullets: this.props.children.length,
+	        onClick: this.setActive }),
 	      this.props.children.map(function (child, key) {
 	        var index = key + 1;
 
@@ -146,14 +146,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    );
 	  };
 
-	  return ViewportSlider;
+	  return Slider;
 	})(_react.Component);
 
-	exports['default'] = ViewportSlider;
+	exports['default'] = Slider;
 
-	ViewportSlider.defaultProps = {};
+	Slider.defaultProps = {};
 
-	ViewportSlider.propTypes = {};
+	Slider.propTypes = {};
 	module.exports = exports['default'];
 
 /***/ },
@@ -19253,7 +19253,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }).map(function (i) {
 	      return _react2['default'].createElement(_Bullet2['default'], { key: i,
 	        index: i,
-	        active: i === props.activeIndex,
 	        onClick: props.onClick });
 	    })
 	  );
@@ -19305,12 +19304,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    to: 'slide-' + props.index });
 	};
 
-	Bullet.defaultProps = {
-	  active: false
-	};
-
 	Bullet.propTypes = {
-	  active: _react.PropTypes.bool,
 	  index: _react.PropTypes.number.isRequired,
 	  onClick: _react.PropTypes.func
 	};
