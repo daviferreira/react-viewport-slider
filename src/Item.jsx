@@ -47,7 +47,11 @@ Item.defaultProps = {
 };
 
 Item.propTypes = {
-  buttonLabel: PropTypes.string,
+  buttonLabel: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.object
+  ]),
   hideButton: PropTypes.bool,
   index: PropTypes.number.isRequired,
   itemClass: PropTypes.string,

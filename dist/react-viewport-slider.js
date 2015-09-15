@@ -19095,7 +19095,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	Item.propTypes = {
-	  buttonLabel: _react.PropTypes.string,
+	  buttonLabel: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element, _react.PropTypes.object]),
 	  hideButton: _react.PropTypes.bool,
 	  index: _react.PropTypes.number.isRequired,
 	  itemClass: _react.PropTypes.string,
