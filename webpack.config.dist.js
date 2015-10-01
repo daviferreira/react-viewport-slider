@@ -10,10 +10,10 @@ module.exports = {
   },
 
   externals: {
-    react: 'React'
+    react: 'React',
+    'react-dom': 'ReactDOM'
   },
 
-  // TODO: use your component name here
   output: {
     filename: 'dist/react-viewport-slider.js',
     libraryTarget: 'umd',
