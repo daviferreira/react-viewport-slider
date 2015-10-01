@@ -1,0 +1,31 @@
+{
+  "name": "react-viewpor-slider",
+  "description": "Viewport Slider React component.",
+  "homepage": "https://github.com/daviferreira/react-viewpor-slider",
+  "authors": [
+    "Davi Ferreira <hi@daviferreira.com>"
+  ],
+  "main": "dist/js/react-viewpor-slider.js",
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-component",
+    "slider",
+    "carousel",
+    "fullscreen",
+    "viewport",
+    "responsive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "demo",
+    "dist-modules",
+    "node_modules",
+    "src",
+    "test",
+    "*.json",
+    "webpack.*",
+    "*.md"
+  ]
+}
