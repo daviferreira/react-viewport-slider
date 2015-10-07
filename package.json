@@ -51,7 +51,7 @@
     "trash": "2.0.0",
     "unexpected": "9.16.1",
     "unexpected-sinon": "7.1.0",
-    "webpack": "1.12.1",
+    "webpack": "1.12.2",
     "webpack-dev-server": "1.10.1"
   }
 }
