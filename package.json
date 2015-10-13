@@ -48,7 +48,7 @@
     "react-addons-test-utils": "0.14.0-rc1",
     "sinon": "1.17.1",
     "style-loader": "0.12.3",
-    "trash": "2.0.0",
+    "trash": "3.0.0",
     "unexpected": "9.16.1",
     "unexpected-sinon": "7.1.0",
     "webpack": "1.12.1",
