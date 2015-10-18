@@ -33,7 +33,7 @@
     "react-dom": "0.14.0-rc1"
   },
   "dependencies": {
-    "classnames": "2.1.5",
+    "classnames": "2.2.0",
     "react-scroll": "git://github.com/daviferreira/react-scroll"
   },
   "devDependencies": {
