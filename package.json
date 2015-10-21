@@ -46,7 +46,7 @@
     "mocha-jsdom": "1.0.0",
     "normalize.css": "3.0.3",
     "react-addons-test-utils": "0.14.0-rc1",
-    "sinon": "1.17.1",
+    "sinon": "1.17.2",
     "style-loader": "0.12.3",
     "trash": "3.1.1",
     "unexpected": "10.0.1",
