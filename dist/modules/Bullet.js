@@ -4,7 +4,9 @@ exports.__esModule = true;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _reactScroll = require('react-scroll');
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
 
 var _react = require('react');
 
@@ -19,19 +21,19 @@ var Bullet = function Bullet(props) {
   };
 
   var handleClick = function handleClick() {
-    props.onClick(props.index);
+    props.onClick(props.index, true);
   };
 
-  return _react2['default'].createElement(_reactScroll.Link, { className: 'viewport-slider-paginator-bullet',
-    duration: 500,
-    smooth: true,
+  var classes = _classnames2['default']('viewport-slider-paginator-bullet', { 'is-active': props.active });
+
+  return _react2['default'].createElement('a', { href: '#viewport-slide-' + props.index,
+    className: classes,
     onClick: handleClick,
-    spy: true,
-    style: style,
-    to: 'slide-' + props.index });
+    style: style });
 };
 
 Bullet.propTypes = {
+  active: _react.PropTypes.bool,
   index: _react.PropTypes.number.isRequired,
   onClick: _react.PropTypes.func
 };

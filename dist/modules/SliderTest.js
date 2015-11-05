@@ -6,28 +6,25 @@ var _unexpected = require('unexpected');
 
 var _unexpected2 = _interopRequireDefault(_unexpected);
 
-var _mochaJsdom = require('mocha-jsdom');
+var _skinDeep = require('skin-deep');
 
-var _mochaJsdom2 = _interopRequireDefault(_mochaJsdom);
+var _skinDeep2 = _interopRequireDefault(_skinDeep);
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactAddonsTestUtils = require('react-addons-test-utils');
-
-var _reactAddonsTestUtils2 = _interopRequireDefault(_reactAddonsTestUtils);
 
 var _Slider = require('./Slider');
 
 var _Slider2 = _interopRequireDefault(_Slider);
 
 describe('Slider Test Case', function () {
-
-  _mochaJsdom2['default']();
+  var vdom = undefined,
+      instance = undefined,
+      items = undefined;
 
   it('should render', function () {
-    var instance = _reactAddonsTestUtils2['default'].renderIntoDocument(_react2['default'].createElement(
+    var tree = _skinDeep2['default'].shallowRender(_react2['default'].createElement(
       _Slider2['default'],
       null,
       _react2['default'].createElement(
@@ -46,6 +43,11 @@ describe('Slider Test Case', function () {
         'Slide 3'
       )
     ));
+
+    instance = tree.getMountedInstance();
+    vdom = tree.getRenderOutput();
+
     _unexpected2['default'](instance, 'to be defined');
+    _unexpected2['default'](vdom, 'to be defined');
   });
 });

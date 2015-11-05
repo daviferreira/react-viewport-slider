@@ -10,7 +10,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _reactScroll = require('react-scroll');
+var _animatedScrollto = require('animated-scrollto');
+
+var _animatedScrollto2 = _interopRequireDefault(_animatedScrollto);
 
 var _react = require('react');
 
@@ -35,14 +37,47 @@ var Slider = (function (_Component) {
     this.state = { activeIndex: 1 };
 
     this.setActive = this.setActive.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.lastScroll = 0;
+
+    window.addEventListener('scroll', this.handleScroll);
   }
 
-  Slider.prototype.setActive = function setActive(index) {
-    this.setState({ activeIndex: index });
+  Slider.prototype.componentWillUnmount = function componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  };
+
+  Slider.prototype.handleScroll = function handleScroll() {
+    if (this.isAnimating) {
+      return;
+    }
+
+    // up
+    if (window.scrollY > this.lastScroll && window.innerHeight + window.scrollY > window.innerHeight * this.state.activeIndex + window.innerHeight / 2) {
+      this.setActive(this.state.activeIndex + 1);
+      // down
+    } else if (window.scrollY < this.lastScroll && window.innerHeight + window.scrollY < window.innerHeight * this.state.activeIndex - window.innerHeight / 1.5) {
+        this.setActive(this.state.activeIndex - 1);
+      }
+
+    this.lastScroll = window.scrollY;
+  };
+
+  Slider.prototype.setActive = function setActive(index, scrollTo) {
+    var _this = this;
+
+    this.setState({ activeIndex: index }, function () {
+      if (scrollTo) {
+        _this.isAnimating = true;
+        _animatedScrollto2['default'](document.body, _this.refs['slide-' + index].offsetTop, 500, function () {
+          _this.isAnimating = false;
+        });
+      }
+    });
   };
 
   Slider.prototype.render = function render() {
-    var _this = this;
+    var _this2 = this;
 
     if (!this.props.children) {
       return null;
@@ -58,14 +93,14 @@ var Slider = (function (_Component) {
         var index = key + 1;
 
         return _react2['default'].createElement(
-          _reactScroll.Element,
-          { name: 'slide-' + index, key: index },
+          'div',
+          { ref: 'slide-' + index, key: index },
           _react2['default'].createElement(
             _Item2['default'],
             _extends({}, child.props, {
               index: index,
-              hideButton: index === _this.props.children.length,
-              onClick: _this.setActive }),
+              hideButton: index === _this2.props.children.length,
+              onClick: _this2.setActive }),
             child
           )
         );

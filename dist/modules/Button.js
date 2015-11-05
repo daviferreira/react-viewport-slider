@@ -8,8 +8,6 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _reactScroll = require('react-scroll');
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -25,16 +23,15 @@ var Button = function Button(props) {
   };
 
   var handleClick = function handleClick() {
-    props.onClick(props.index + 1);
+    console.log(props.index + 1);
+    props.onClick(props.index + 1, true);
   };
 
   return _react2['default'].createElement(
-    _reactScroll.Link,
-    { className: 'viewport-slider-button',
-      duration: 500,
+    'a',
+    { href: '#viewport-slide-' + (props.index + 1),
+      className: 'viewport-slider-button',
       onClick: handleClick,
-      smooth: true,
-      to: 'slide-' + (props.index + 1),
       style: style },
     props.children
   );
