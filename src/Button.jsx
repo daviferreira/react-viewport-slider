@@ -1,10 +1,9 @@
 'use strict';
 
 import classNames from 'classnames';
-import { Link } from 'react-scroll';
 import React, { PropTypes } from 'react';
 
-var Button = (props) => {
+const Button = (props) => {
 
   const style = {
     bottom: '50px',
@@ -14,19 +13,18 @@ var Button = (props) => {
     zIndex: 2
   }
 
-  var handleClick = () => {
-    props.onClick(props.index + 1);
+  const handleClick = () => {
+    console.log(props.index + 1);
+    props.onClick(props.index + 1, true);
   };
 
   return (
-    <Link className="viewport-slider-button"
-      duration={500}
+    <a href={`#viewport-slide-${ props.index + 1 }`}
+      className="viewport-slider-button"
       onClick={handleClick}
-      smooth={true}
-      to={`slide-${props.index + 1}`}
       style={style}>
       {props.children}
-    </Link>
+    </a>
   );
 
 };

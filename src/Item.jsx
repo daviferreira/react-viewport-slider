@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import Button from './Button';
 
-var Item = (props) => {
+const Item = (props) => {
 
   const style = {
     boxSizing: 'border-box',
@@ -23,7 +23,7 @@ var Item = (props) => {
   const propsClone = Object.create(props || {});
   delete propsClone.children;
 
-  var renderButton = () => {
+  const renderButton = () => {
     return (
       <Button index={props.index} onClick={props.onClick}>
         {props.buttonLabel}

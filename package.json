@@ -6,7 +6,7 @@
   "scripts": {
     "bundle-demo": "webpack --config webpack.config.demo.js",
     "bundle-dist": "webpack --config webpack.config.dist.js",
-    "bundle-modules": "trash dist/modules/* --force && babel src --loose --out-dir dist/modules",
+    "bundle-modules": "rm -rf dist/modules/* --force && babel src --loose --out-dir dist/modules",
     "bundle": "npm run bundle-demo && npm run bundle-dist && npm run bundle-modules",
     "demo": "webpack-dev-server --config webpack.config.demo.js",
     "lint": "eslint ./src",
@@ -29,12 +29,12 @@
   "author": "Davi Ferreira <hi@daviferreira.com>",
   "license": "MIT",
   "peerDependencies": {
-    "react": "0.14.0",
-    "react-dom": "0.14.1"
+    "react": "0.14.2",
+    "react-dom": "0.14.2"
   },
   "dependencies": {
-    "classnames": "2.1.5",
-    "react-scroll": "git://github.com/daviferreira/react-scroll"
+    "animated-scrollto": "1.1.0",
+    "classnames": "2.1.5"
   },
   "devDependencies": {
     "babel": "5.8.29",
@@ -42,13 +42,10 @@
     "babel-loader": "5.3.2",
     "css-loader": "0.18.0",
     "eslint": "1.6.0",
-    "jsdom": "6.5.1",
-    "mocha-jsdom": "1.0.0",
     "normalize.css": "3.0.3",
-    "react-addons-test-utils": "0.14.1",
     "sinon": "1.17.1",
+    "skin-deep": "0.12.0",
     "style-loader": "0.12.3",
-    "trash": "3.1.2",
     "unexpected": "10.0.2",
     "unexpected-sinon": "8.0.0",
     "webpack": "1.12.1",

@@ -1,6 +1,6 @@
 'use strict';
 
-import { Element } from 'react-scroll';
+import animatedScrollTo from 'animated-scrollto';
 import React, { Component, PropTypes } from 'react';
 
 import Item from './Item';
@@ -14,10 +14,54 @@ export default class Slider extends Component {
     this.state = { activeIndex: 1 };
 
     this.setActive = this.setActive.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.lastScroll = 0;
+
+    window.addEventListener('scroll', this.handleScroll);
   }
 
-  setActive(index) {
-    this.setState({ activeIndex: index });
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    if (this.isAnimating) {
+      return;
+    }
+
+    // up
+    if (
+      window.scrollY > this.lastScroll &&
+      window.innerHeight + window.scrollY >
+        ((window.innerHeight * this.state.activeIndex) + window.innerHeight/2)
+    ) {
+      this.setActive(this.state.activeIndex + 1);
+    // down
+    } else if (
+      window.scrollY < this.lastScroll &&
+      window.innerHeight + window.scrollY <
+        ((window.innerHeight * this.state.activeIndex) - window.innerHeight/1.5)
+    ) {
+      this.setActive(this.state.activeIndex - 1);
+    }
+
+    this.lastScroll = window.scrollY;
+  }
+
+  setActive(index, scrollTo) {
+    this.setState({ activeIndex: index }, () => {
+      if (scrollTo) {
+        this.isAnimating = true;
+        animatedScrollTo(
+            document.body,
+            this.refs[`slide-${ index }`].offsetTop,
+            500,
+            () => {
+              this.isAnimating = false;
+            }
+        );
+      }
+    });
   }
 
   render() {
@@ -35,14 +79,14 @@ export default class Slider extends Component {
           let index = key + 1;
 
           return (
-            <Element name={`slide-${index}`} key={index}>
+            <div ref={`slide-${ index }`} key={index}>
               <Item {...child.props}
                 index={index}
                 hideButton={index === this.props.children.length}
                 onClick={this.setActive}>
                 {child}
               </Item>
-            </Element>
+            </div>
           );
         })}
       </div>
@@ -54,4 +98,3 @@ export default class Slider extends Component {
 Slider.defaultProps = {};
 
 Slider.propTypes = {};
-  

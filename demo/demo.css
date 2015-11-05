@@ -47,7 +47,7 @@ body {
   opacity: .6;
 }
 
-.viewport-slider-paginator-bullet.active {
+.viewport-slider-paginator-bullet.is-active {
   opacity: 1;
 }
 

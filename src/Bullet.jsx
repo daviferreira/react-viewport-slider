@@ -1,9 +1,9 @@
 'use strict';
 
-import { Link } from 'react-scroll';
+import classNames from 'classnames';
 import React, { PropTypes } from 'react';
 
-var Bullet = (props) => {
+const Bullet = (props) => {
 
   const style = {
     display: 'block',
@@ -11,23 +11,26 @@ var Bullet = (props) => {
     width: '20px'
   }
 
-  var handleClick = () => {
-    props.onClick(props.index);
+  const handleClick = () => {
+    props.onClick(props.index, true);
   };
 
+  const classes = classNames(
+    'viewport-slider-paginator-bullet',
+    { 'is-active': props.active }
+  )
+
   return (
-    <Link className="viewport-slider-paginator-bullet"
-      duration={500}
-      smooth={true}
+    <a href={`#viewport-slide-${props.index}`}
+      className={classes}
       onClick={handleClick}
-      spy={true}
-      style={style}
-      to={`slide-${props.index}`} />
+      style={style} />
   );
 
 };
 
 Bullet.propTypes = {
+  active: PropTypes.bool,
   index: PropTypes.number.isRequired,
   onClick: PropTypes.func
 };

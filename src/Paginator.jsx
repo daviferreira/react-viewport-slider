@@ -1,11 +1,10 @@
 'use strict';
 
-import { Link } from 'react-scroll';
 import React, { PropTypes } from 'react';
 
 import Bullet from './Bullet';
 
-var Paginator = (props) => {
+const Paginator = (props) => {
 
   const style = {
     top: '50%',
@@ -19,7 +18,8 @@ var Paginator = (props) => {
     <div className="viewport-slider-paginator" style={style}>
       {Array.from(new Array(props.bullets), (x, i) => i + 1).map((i) => {
         return (
-          <Bullet key={i}
+          <Bullet active={i === props.activeIndex}
+            key={i}
             index={i}
             onClick={props.onClick} />
         );
