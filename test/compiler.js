@@ -2,6 +2,12 @@
 
 var babel = require('babel-core');
 var fs = require('fs');
+var jsdom = require('jsdom');
+
+// needed for animatedScrollTo
+global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
+global.window = document._defaultView;
+global.navigator = document._defaultView.navigator;
 
 // borrowed from https://github.com/babel/babel-jest/blob/master/index.js
 require.extensions['.jsx'] = function (module, filename) {
