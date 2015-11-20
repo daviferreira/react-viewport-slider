@@ -10,10 +10,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _animatedScrollto = require('animated-scrollto');
-
-var _animatedScrollto2 = _interopRequireDefault(_animatedScrollto);
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -25,6 +21,10 @@ var _Item2 = _interopRequireDefault(_Item);
 var _Paginator = require('./Paginator');
 
 var _Paginator2 = _interopRequireDefault(_Paginator);
+
+var _utilScrollToY = require('./util/scrollToY');
+
+var _utilScrollToY2 = _interopRequireDefault(_utilScrollToY);
 
 var Slider = (function (_Component) {
   _inherits(Slider, _Component);
@@ -69,7 +69,7 @@ var Slider = (function (_Component) {
     this.setState({ activeIndex: index }, function () {
       if (scrollTo) {
         _this.isAnimating = true;
-        _animatedScrollto2['default'](document.body, _this.refs['slide-' + index].offsetTop, 500, function () {
+        _utilScrollToY2['default'](_this.refs['slide-' + index].offsetTop, 500, 'easeInOutQuint', function () {
           _this.isAnimating = false;
         });
       }

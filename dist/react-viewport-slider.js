@@ -7,7 +7,7 @@
 		exports["ViewportSlider"] = factory(require("React"));
 	else
 		root["ViewportSlider"] = factory(root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_3__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -83,21 +83,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var _animatedScrollto = __webpack_require__(2);
-
-	var _animatedScrollto2 = _interopRequireDefault(_animatedScrollto);
-
-	var _react = __webpack_require__(3);
+	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Item = __webpack_require__(4);
+	var _Item = __webpack_require__(3);
 
 	var _Item2 = _interopRequireDefault(_Item);
 
-	var _Paginator = __webpack_require__(7);
+	var _Paginator = __webpack_require__(6);
 
 	var _Paginator2 = _interopRequireDefault(_Paginator);
+
+	var _utilScrollToY = __webpack_require__(8);
+
+	var _utilScrollToY2 = _interopRequireDefault(_utilScrollToY);
 
 	var Slider = (function (_Component) {
 	  _inherits(Slider, _Component);
@@ -142,7 +142,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.setState({ activeIndex: index }, function () {
 	      if (scrollTo) {
 	        _this.isAnimating = true;
-	        _animatedScrollto2['default'](document.body, _this.refs['slide-' + index].offsetTop, 500, function () {
+	        _utilScrollToY2['default'](_this.refs['slide-' + index].offsetTop, 500, 'easeInOutQuint', function () {
 	          _this.isAnimating = false;
 	        });
 	      }
@@ -195,66 +195,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 2 */
 /***/ function(module, exports) {
 
-	(function (window) {
-	    var requestAnimFrame = (function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(callback){window.setTimeout(callback,1000/60);};})();
-
-	    var easeInOutQuad = function (t, b, c, d) {
-	        t /= d/2;
-	        if (t < 1) return c/2*t*t + b;
-	        t--;
-	        return -c/2 * (t*(t-2) - 1) + b;
-	    };
-
-	    var animatedScrollTo = function (element, to, duration, callback) {
-	        var start = element.scrollTop,
-	        change = to - start,
-	        animationStart = +new Date();
-	        var animating = true;
-	        var lastpos = null;
-
-	        var animateScroll = function() {
-	            if (!animating) {
-	                return;
-	            }
-	            requestAnimFrame(animateScroll);
-	            var now = +new Date();
-	            var val = Math.floor(easeInOutQuad(now - animationStart, start, change, duration));
-	            if (lastpos) {
-	                if (lastpos === element.scrollTop) {
-	                    lastpos = val;
-	                    element.scrollTop = val;
-	                } else {
-	                    animating = false;
-	                }
-	            } else {
-	                lastpos = val;
-	                element.scrollTop = val;
-	            }
-	            if (now > animationStart + duration) {
-	                element.scrollTop = to;
-	                animating = false;
-	                if (callback) { callback(); }
-	            }
-	        };
-	        requestAnimFrame(animateScroll);
-	    };
-
-	    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	        module.exports = animatedScrollTo;
-	    } else {
-	        window.animatedScrollTo = animatedScrollTo;
-	    }
-	})(window);
-
+	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
-
-/***/ },
-/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -265,15 +209,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _react = __webpack_require__(3);
+	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(5);
+	var _classnames = __webpack_require__(4);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _Button = __webpack_require__(6);
+	var _Button = __webpack_require__(5);
 
 	var _Button2 = _interopRequireDefault(_Button);
 
@@ -326,7 +270,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -380,7 +324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -389,11 +333,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _classnames = __webpack_require__(5);
+	var _classnames = __webpack_require__(4);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _react = __webpack_require__(3);
+	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -430,7 +374,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -439,11 +383,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _react = __webpack_require__(3);
+	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Bullet = __webpack_require__(8);
+	var _Bullet = __webpack_require__(7);
 
 	var _Bullet2 = _interopRequireDefault(_Bullet);
 
@@ -481,7 +425,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -490,11 +434,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _classnames = __webpack_require__(5);
+	var _classnames = __webpack_require__(4);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _react = __webpack_require__(3);
+	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -525,6 +469,81 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	exports['default'] = Bullet;
+	module.exports = exports['default'];
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	// first add raf shim
+	// http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+	'use strict';
+
+	exports.__esModule = true;
+	exports['default'] = scrollToY;
+	window.requestAnimFrame = (function () {
+	  return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+	    window.setTimeout(callback, 1000 / 60);
+	  };
+	})();
+
+	// http://stackoverflow.com/a/26808520
+	// main function
+
+	function scrollToY(scrollTargetY, speed, easing, callback) {
+	  // scrollTargetY: the target scrollY property of the window
+	  // speed: time in pixels per second
+	  // easing: easing equation to use
+
+	  var scrollY = window.scrollY,
+	      scrollTargetY = scrollTargetY || 0,
+	      speed = speed || 2000,
+	      easing = easing || 'easeOutSine',
+	      currentTime = 0;
+
+	  // min time .1, max time .8 seconds
+	  var time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8));
+
+	  // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
+	  var PI_D2 = Math.PI / 2,
+	      easingEquations = {
+	    easeOutSine: function easeOutSine(pos) {
+	      return Math.sin(pos * (Math.PI / 2));
+	    },
+	    easeInOutSine: function easeInOutSine(pos) {
+	      return -0.5 * (Math.cos(Math.PI * pos) - 1);
+	    },
+	    easeInOutQuint: function easeInOutQuint(pos) {
+	      if ((pos /= 0.5) < 1) {
+	        return 0.5 * Math.pow(pos, 5);
+	      }
+	      return 0.5 * (Math.pow(pos - 2, 5) + 2);
+	    }
+	  };
+
+	  // add animation loop
+	  function tick() {
+	    currentTime += 1 / 60;
+
+	    var p = currentTime / time;
+	    var t = easingEquations[easing](p);
+
+	    if (p < 1) {
+	      requestAnimFrame(tick);
+
+	      window.scrollTo(0, scrollY + (scrollTargetY - scrollY) * t);
+	    } else {
+	      if (callback) {
+	        callback();
+	      }
+	      window.scrollTo(0, scrollTargetY);
+	    }
+	  }
+
+	  // call it once to get started
+	  tick();
+	}
+
 	module.exports = exports['default'];
 
 /***/ }

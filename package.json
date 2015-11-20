@@ -33,7 +33,6 @@
     "react-dom": "0.14.2"
   },
   "dependencies": {
-    "animated-scrollto": "1.1.0",
     "classnames": "2.1.5"
   },
   "devDependencies": {

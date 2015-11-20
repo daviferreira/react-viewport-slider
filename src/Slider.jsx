@@ -1,10 +1,10 @@
 'use strict';
 
-import animatedScrollTo from 'animated-scrollto';
 import React, { Component, PropTypes } from 'react';
 
 import Item from './Item';
 import Paginator from './Paginator';
+import scrollToY from './util/scrollToY';
 
 export default class Slider extends Component {
 
@@ -52,13 +52,13 @@ export default class Slider extends Component {
     this.setState({ activeIndex: index }, () => {
       if (scrollTo) {
         this.isAnimating = true;
-        animatedScrollTo(
-            document.body,
-            this.refs[`slide-${ index }`].offsetTop,
-            500,
-            () => {
-              this.isAnimating = false;
-            }
+        scrollToY(
+          this.refs[`slide-${ index }`].offsetTop,
+          500,
+          'easeInOutQuint',
+          () => {
+            this.isAnimating = false;
+          }
         );
       }
     });
