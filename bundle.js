@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e872508773fe6d79c6fe"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b90adeeb7655d64a3220"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -1544,7 +1544,7 @@
 /* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\nexports.__esModule = true;\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }\n\nvar _classnames = __webpack_require__(165);\n\nvar _classnames2 = _interopRequireDefault(_classnames);\n\nvar _react = __webpack_require__(4);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar Button = function Button(props) {\n\n  var style = {\n    bottom: '50px',\n    left: '50%',\n    position: 'absolute',\n    transform: 'translateX(-50%)',\n    zIndex: 2\n  };\n\n  var handleClick = function handleClick() {\n    console.log(props.index + 1);\n    props.onClick(props.index + 1, true);\n  };\n\n  return _react2['default'].createElement(\n    'a',\n    { href: '#viewport-slide-' + (props.index + 1),\n      className: 'viewport-slider-button',\n      onClick: handleClick,\n      style: style },\n    props.children\n  );\n};\n\nButton.propTypes = {\n  index: _react.PropTypes.number.isRequired,\n  onClick: _react.PropTypes.func\n};\n\nexports['default'] = Button;\nmodule.exports = exports['default'];\n\n/*****************\n ** WEBPACK FOOTER\n ** ./src/Button.jsx\n ** module id = 166\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./src/Button.jsx?");
+	eval("'use strict';\n\nexports.__esModule = true;\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }\n\nvar _classnames = __webpack_require__(165);\n\nvar _classnames2 = _interopRequireDefault(_classnames);\n\nvar _react = __webpack_require__(4);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar Button = function Button(props) {\n\n  var style = {\n    bottom: '50px',\n    left: '50%',\n    position: 'absolute',\n    transform: 'translateX(-50%)',\n    zIndex: 2\n  };\n\n  var handleClick = function handleClick() {\n    props.onClick(props.index + 1, true);\n  };\n\n  return _react2['default'].createElement(\n    'a',\n    { href: '#viewport-slide-' + (props.index + 1),\n      className: 'viewport-slider-button',\n      onClick: handleClick,\n      style: style },\n    props.children\n  );\n};\n\nButton.propTypes = {\n  index: _react.PropTypes.number.isRequired,\n  onClick: _react.PropTypes.func\n};\n\nexports['default'] = Button;\nmodule.exports = exports['default'];\n\n/*****************\n ** WEBPACK FOOTER\n ** ./src/Button.jsx\n ** module id = 166\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./src/Button.jsx?");
 
 /***/ },
 /* 167 */
