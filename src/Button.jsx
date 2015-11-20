@@ -14,7 +14,6 @@ const Button = (props) => {
   }
 
   const handleClick = () => {
-    console.log(props.index + 1);
     props.onClick(props.index + 1, true);
   };
 
