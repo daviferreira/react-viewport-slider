@@ -11,7 +11,7 @@ window.requestAnimFrame = (() => {
 
 // http://stackoverflow.com/a/26808520
 // main function
-export default function scrollToY(scrollTargetY, speed, easing, callback) {
+var scrollToY = function scrollToY(scrollTargetY, speed, easing, callback) {
   // scrollTargetY: the target scrollY property of the window
   // speed: time in pixels per second
   // easing: easing equation to use
@@ -64,3 +64,5 @@ export default function scrollToY(scrollTargetY, speed, easing, callback) {
   // call it once to get started
   tick();
 }
+
+module.exports = scrollToY;
