@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 
 import Item from './Item';
 import Paginator from './Paginator';
-import scrollToY from './util/scrollToY';
+import scrollToY from 'scroll-to-y';
 
 export default class Slider extends Component {
 

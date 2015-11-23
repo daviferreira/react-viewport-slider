@@ -33,7 +33,8 @@
     "react-dom": "^0.14.3"
   },
   "dependencies": {
-    "classnames": "2.1.5"
+    "classnames": "2.1.5",
+    "scroll-to-y": "git://github.com/daviferreira/scroll-to-y.git"
   },
   "devDependencies": {
     "babel": "5.8.29",
