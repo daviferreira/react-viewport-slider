@@ -42,6 +42,7 @@
     "css-loader": "0.18.0",
     "eslint": "1.6.0",
     "jsdom": "7.0.2",
+    "mocha": "2.3.4",
     "normalize.css": "3.0.3",
     "sinon": "1.17.1",
     "skin-deep": "0.12.0",
