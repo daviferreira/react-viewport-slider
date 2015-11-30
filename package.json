@@ -1,6 +1,6 @@
 {
   "name": "react-viewport-slider",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Viewport Slider React component.",
   "main": "./dist/modules/index.js",
   "scripts": {
