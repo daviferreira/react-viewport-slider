@@ -4,27 +4,28 @@ import React, { Component, PropTypes } from 'react';
 
 import Item from './Item';
 import Paginator from './Paginator';
-import scrollToY from 'scroll-to-y';
+
+// TODO:
+// You should do the detection of the scroll event on the first scrollable
+// parent instead of window. Because for main websites, scroller is the window
+// but on other cases it is a div with `overflow: scroll` style.
+
+const BROWSER = typeof window != 'undefined'
 
 export default class Slider extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = { activeIndex: 1 };
-
-    this.setActive = this.setActive.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
-    this.lastScroll = 0;
-
-    window.addEventListener('scroll', this.handleScroll);
+  state = { activeIndex: 1 };
+  
+  componentDidMount() {
+    if (BROWSER) window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    if (BROWSER) window.removeEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll() {
+  lastScroll = 0;
+  handleScroll = () => {
     if (this.isAnimating) {
       return;
     }
@@ -48,11 +49,11 @@ export default class Slider extends Component {
     this.lastScroll = window.scrollY;
   }
 
-  setActive(index, scrollTo) {
+  setActive = (index, scrollTo) => {
     this.setState({ activeIndex: index }, () => {
       if (scrollTo) {
         this.isAnimating = true;
-        scrollToY(
+        require('scroll-to-y')(
           this.refs[`slide-${ index }`].offsetTop,
           500,
           'easeInOutQuint',
