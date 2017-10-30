@@ -84,7 +84,9 @@ export default class Slider extends Component {
           return (
             <div ref={`slide-${index}`} key={index}>
               {React.cloneElement(child, {
-                index
+                index,
+                hideButton: index === this.props.children.length,
+                onClick: this.setActive
               })}
             </div>
           );
