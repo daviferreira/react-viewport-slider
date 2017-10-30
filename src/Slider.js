@@ -30,20 +30,22 @@ export default class Slider extends Component {
       return;
     }
 
+    const { activeIndex } = this.state;
+
     // up
     if (
       window.scrollY > this.lastScroll &&
       window.innerHeight + window.scrollY >
-        window.innerHeight * this.state.activeIndex + window.innerHeight / 2
+        window.innerHeight * activeIndex + window.innerHeight / 2
     ) {
-      this.setActive(this.state.activeIndex + 1);
+      this.setActive(activeIndex + 1);
       // down
     } else if (
       window.scrollY < this.lastScroll &&
       window.innerHeight + window.scrollY <
-        window.innerHeight * this.state.activeIndex - window.innerHeight / 1.5
+        window.innerHeight * activeIndex - window.innerHeight / 1.5
     ) {
-      this.setActive(this.state.activeIndex - 1);
+      this.setActive(activeIndex - 1);
     }
 
     this.lastScroll = window.scrollY;
@@ -66,26 +68,29 @@ export default class Slider extends Component {
   }
 
   render() {
-    if (!this.props.children) {
+    const { children } = this.props;
+    const { activeIndex } = this.state;
+
+    if (!children) {
       return null;
     }
 
     return (
       <div className="viewport-slider">
         <Paginator
-          activeIndex={this.state.activeIndex}
-          bullets={this.props.children.length}
+          activeIndex={activeIndex}
+          bullets={children.length}
           onClick={this.setActive}
         />
 
-        {this.props.children.map((child, key) => {
+        {children.map((child, key) => {
           let index = key + 1;
 
           return (
             <div ref={`slide-${index}`} key={index}>
               {React.cloneElement(child, {
                 index,
-                hideButton: index === this.props.children.length,
+                hideButton: index === children.length,
                 onClick: this.setActive
               })}
             </div>

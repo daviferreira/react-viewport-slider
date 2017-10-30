@@ -6,7 +6,7 @@ import React from 'react';
 
 import Bullet from './Bullet';
 
-const Paginator = props => {
+const Paginator = ({ activeIndex, bullets, onClick }) => {
   const style = {
     top: '50%',
     right: '50px',
@@ -17,13 +17,13 @@ const Paginator = props => {
 
   return (
     <div className="viewport-slider-paginator" style={style}>
-      {Array.from(new Array(props.bullets), (x, i) => i + 1).map(i => {
+      {Array.from(new Array(bullets), (x, i) => i + 1).map(i => {
         return (
           <Bullet
-            active={i === props.activeIndex}
+            active={i === activeIndex}
             key={i}
             index={i}
-            onClick={props.onClick}
+            onClick={onClick}
           />
         );
       })}

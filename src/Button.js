@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import React from 'react';
 
-const Button = props => {
+const Button = ({ children, index, onClick }) => {
   const style = {
     bottom: '50px',
     left: '50%',
@@ -14,17 +14,17 @@ const Button = props => {
   };
 
   const handleClick = () => {
-    props.onClick(props.index + 1, true);
+    onClick(index + 1, true);
   };
 
   return (
     <a
-      href={`#viewport-slide-${props.index + 1}`}
+      href={`#viewport-slide-${index + 1}`}
       className="viewport-slider-button"
       onClick={handleClick}
       style={style}
     >
-      {props.children}
+      {children}
     </a>
   );
 };

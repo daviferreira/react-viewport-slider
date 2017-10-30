@@ -8,7 +8,17 @@ import classNames from 'classnames';
 import Button from './Button';
 
 const Item = props => {
-  const style = {
+  const {
+    buttonLabel,
+    className,
+    children,
+    hideButton,
+    index,
+    onClick,
+    style
+  } = props;
+
+  const itemStyle = {
     boxSizing: 'border-box',
     height: '100vh',
     position: 'relative',
@@ -17,8 +27,8 @@ const Item = props => {
 
   const classes = classNames(
     'viewport-slider-item',
-    `viewport-slider-item-${props.index}`,
-    props.className
+    `viewport-slider-item-${index}`,
+    className
   );
 
   const propsClone = Object.create(props || {});
@@ -26,8 +36,8 @@ const Item = props => {
 
   const renderButton = () => {
     return (
-      <Button index={props.index} onClick={props.onClick}>
-        {props.buttonLabel}
+      <Button index={index} onClick={onClick}>
+        {buttonLabel}
       </Button>
     );
   };
@@ -36,10 +46,10 @@ const Item = props => {
     <div
       {...propsClone}
       className={classes}
-      style={Object.assign(style, props.style)}
+      style={Object.assign(itemStyle, style)}
     >
-      {props.children}
-      {props.hideButton ? null : renderButton()}
+      {children}
+      {hideButton ? null : renderButton()}
     </div>
   );
 };
