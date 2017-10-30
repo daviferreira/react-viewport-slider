@@ -12,9 +12,9 @@ describe('Slider Test Case', () => {
   it('should render', () => {
     const tree = sd.shallowRender(
       <Slider>
-        <div>Slide 1</div>
-        <div>Slide 2</div>
-        <div>Slide 3</div>
+        <Slider.Item>Slide 1</Slider.Item>
+        <Slider.Item>Slide 2</Slider.Item>
+        <Slider.Item>Slide 3</Slider.Item>
       </Slider>
     );
 
