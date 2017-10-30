@@ -6,11 +6,15 @@
   "scripts": {
     "bundle-demo": "webpack --config webpack.config.demo.js",
     "bundle-dist": "webpack --config webpack.config.dist.js",
+    "bundle-page": "webpack --config webpack.config.page.js",
     "bundle-modules": "rm -rf dist/modules/* --force && babel src --loose --out-dir dist/modules",
     "bundle": "npm run bundle-demo && npm run bundle-dist && npm run bundle-modules",
     "start": "webpack-dev-server --config webpack.config.demo.js",
     "lint": "eslint ./src",
-    "test": "npm run lint && mocha -R spec --require babel-register --require ./test/test-setup.js ./src/**/*Test.js"
+    "test": "npm run lint && mocha -R spec --require babel-register --require ./test/test-setup.js ./src/**/*Test.js",
+    "prepare": "npm run bundle-dist && npm run bundle-modules",
+    "prepublishOnly": "npm run deploy",
+    "deploy": "npm run bundle-page && gh-pages -d page/"
   },
   "repository": {
     "type": "git",
@@ -67,6 +71,7 @@
     "react-test-renderer": "16.0.0",
     "skin-deep": "1.2.0",
     "style-loader": "0.19.0",
+    "uglifyjs-webpack-plugin": "1.0.1",
     "unexpected": "10.36.0",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.3"
