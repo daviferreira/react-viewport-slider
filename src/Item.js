@@ -5,8 +5,7 @@ import classNames from 'classnames';
 
 import Button from './Button';
 
-const Item = (props) => {
-
+const Item = props => {
   const style = {
     boxSizing: 'border-box',
     height: '100vh',
@@ -32,12 +31,15 @@ const Item = (props) => {
   };
 
   return (
-    <div {...propsClone} className={classes} style={Object.assign(style, props.itemStyle)}>
+    <div
+      {...propsClone}
+      className={classes}
+      style={Object.assign(style, props.itemStyle)}
+    >
       {props.children}
       {props.hideButton ? null : renderButton()}
     </div>
   );
-
 };
 
 Item.defaultProps = {
@@ -51,6 +53,10 @@ Item.propTypes = {
     PropTypes.string,
     PropTypes.element,
     PropTypes.object
+  ]),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
   ]),
   hideButton: PropTypes.bool,
   index: PropTypes.number.isRequired,

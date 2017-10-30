@@ -1,29 +1,47 @@
 'use strict';
 
-var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
-
   devtool: 'eval',
 
   entry: {
-    demo: ['webpack/hot/dev-server', './demo/index.jsx']
+    demo: ['webpack/hot/dev-server', './demo/index.js']
   },
 
   module: {
     loaders: [
-      { test: /\.jsx?$/, loader: 'babel?loose=all', exclude: /node_modules/ },
-      { test: /\.css$/, loader: 'style-loader!css-loader' }
+      {
+        test: /\.js?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: {
+          presets: ['react']
+        }
+      },
+      {
+        test: /\.css$/,
+        loaders: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            plugins() {
+              return [
+                autoprefixer
+              ];
+            }
+          }
+        }]
+      }
     ]
   },
 
   output: {
     filename: 'demo/bundle.js'
-  },
-
-  resolve: {
-    extensions: ['', '.jsx', '.js']
   },
 
   plugins: [
@@ -33,5 +51,4 @@ module.exports = {
   devServer: {
     contentBase: './demo'
   }
-
 };

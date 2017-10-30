@@ -7,7 +7,7 @@ import React from 'react';
 import Slider from './Slider';
 
 describe('Slider Test Case', () => {
-  let vdom, instance, items;
+  let vdom, instance;
 
   it('should render', () => {
     const tree = sd.shallowRender(
@@ -24,5 +24,4 @@ describe('Slider Test Case', () => {
     expect(instance, 'to be defined');
     expect(vdom, 'to be defined');
   });
-
 });
