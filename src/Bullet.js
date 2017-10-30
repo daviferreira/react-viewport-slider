@@ -1,7 +1,8 @@
 'use strict';
 
 import classNames from 'classnames';
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const Bullet = props => {
   const style = {
