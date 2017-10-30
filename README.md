@@ -44,33 +44,6 @@ import Slider from ‘react-viewport-slider’;
 
 ```
 
-### Browser
-
-Download or install via bower:
-
-```
-bower install react-viewport-slider
-```
-
-Then:
-
-```html
-<script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-rc1/react.js" type="text/javascript" charset="utf-8"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-rc1/react-dom.js" type="text/javascript" charset="utf-8"></script>
-<script src=“react-viewport-slider/dist/react-viewport-slider.js” type=“text/javascript” charset=“utf-8”></script>
-```
-
-```javascript
-<script type=“text/jsx”>
-React.render(
-    <ViewportSlider>
-			…
-    </ViewportSlider>,
-    document.getElementById(‘example’)
-);
-</script>
-```
-
 ## development
 
 ```
