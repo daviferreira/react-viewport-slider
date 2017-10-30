@@ -8,9 +8,9 @@
     "bundle-dist": "webpack --config webpack.config.dist.js",
     "bundle-modules": "rm -rf dist/modules/* --force && babel src --loose --out-dir dist/modules",
     "bundle": "npm run bundle-demo && npm run bundle-dist && npm run bundle-modules",
-    "demo": "webpack-dev-server --config webpack.config.demo.js",
+    "start": "webpack-dev-server --config webpack.config.demo.js",
     "lint": "eslint ./src",
-    "test": "npm run lint && mocha -R spec --require babel-register ./src/**/*Test.js"
+    "test": "npm run lint && mocha -R spec --require babel-register --require ./test/test-setup.js ./src/**/*Test.js"
   },
   "repository": {
     "type": "git",
@@ -57,8 +57,10 @@
     "eslint-plugin-react": "7.4.0",
     "eslint-plugin-standard": "3.0.1",
     "gh-pages": "1.0.0",
+    "jsdom": "11.3.0",
     "mocha": "4.0.1",
     "normalize.css": "7.0.0",
+    "postcss-loader": "2.0.8",
     "react": "16.0.0",
     "react-addons-test-utils": "15.6.2",
     "react-dom": "16.0.0",

@@ -26,15 +26,15 @@ import Slider from ‘react-viewport-slider’;
 	render: function () {
 		return (
       <Slider>
-        <div itemStyle={{ backgroundColor: '#a2d7c7' }}>
+        <Slider.Item style={{ backgroundColor: '#a2d7c7' }}>
           <div className="content">Hello, world.</div>
-        </div>
-        <div itemStyle={{ backgroundColor: '#353330' }}>
+        </Slider.Item>
+        <Slider.Item style={{ backgroundColor: '#353330' }}>
           <div className="content">Sup?</div>
-        </div>
-        <div itemClass="has-overlay" itemStyle={{ backgroundImage: `url(${wallpaper})`, backgroundSize: 'cover' }}>
+        </Slider.Item>
+        <Slider.Item className="has-overlay" style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: 'cover' }}>
           <div className="content">Yo.</div>
-        </div>
+        </Slider.Item>
       </Slider>
 
 		);

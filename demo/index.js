@@ -16,22 +16,22 @@ class Demo extends React.Component {
   render() {
     return (
       <Slider>
-        <div itemStyle={{ backgroundColor: '#a2d7c7' }}>
+        <Slider.Item style={{ backgroundColor: '#a2d7c7' }}>
           <div className="content">Hello, world.</div>
-        </div>
-        <div itemStyle={{ backgroundColor: '#353330' }}>
+        </Slider.Item>
+        <Slider.Item style={{ backgroundColor: '#353330' }}>
           <div className="content">Sup?</div>
-        </div>
-        <div
-          itemClass="has-overlay"
-          itemStyle={{
+        </Slider.Item>
+        <Slider.Item
+          className="has-overlay"
+          style={{
             backgroundImage: `url(${wallpaper})`,
             backgroundSize: 'cover'
           }}
         >
           <div className="content">Yo.</div>
-        </div>
-        <div itemStyle={{ color: '#333' }}>
+        </Slider.Item>
+        <Slider.Item style={{ color: '#333' }}>
           <div className="content love">
             <i className="fa fa-heart" />
             <iframe
@@ -59,7 +59,7 @@ class Demo extends React.Component {
               height="30"
             />
           </div>
-        </div>
+        </Slider.Item>
       </Slider>
     );
   }

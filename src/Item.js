@@ -18,7 +18,7 @@ const Item = props => {
   const classes = classNames(
     'viewport-slider-item',
     `viewport-slider-item-${props.index}`,
-    props.itemClass
+    props.className
   );
 
   const propsClone = Object.create(props || {});
@@ -36,7 +36,7 @@ const Item = props => {
     <div
       {...propsClone}
       className={classes}
-      style={Object.assign(style, props.itemStyle)}
+      style={Object.assign(style, props.style)}
     >
       {props.children}
       {props.hideButton ? null : renderButton()}
@@ -47,7 +47,7 @@ const Item = props => {
 Item.defaultProps = {
   buttonLabel: 'next',
   hideButton: false,
-  itemStyle: {}
+  style: {}
 };
 
 Item.propTypes = {
@@ -61,9 +61,9 @@ Item.propTypes = {
     PropTypes.node
   ]),
   hideButton: PropTypes.bool,
-  index: PropTypes.number.isRequired,
-  itemClass: PropTypes.string,
-  itemStyle: PropTypes.object,
+  index: PropTypes.number,
+  className: PropTypes.string,
+  style: PropTypes.object,
   onClick: PropTypes.func
 };
 

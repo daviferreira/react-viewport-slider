@@ -83,14 +83,9 @@ export default class Slider extends Component {
 
           return (
             <div ref={`slide-${index}`} key={index}>
-              <Item
-                {...child.props}
-                index={index}
-                hideButton={index === this.props.children.length}
-                onClick={this.setActive}
-              >
-                {child}
-              </Item>
+              {React.cloneElement(child, {
+                index
+              })}
             </div>
           );
         })}
@@ -105,3 +100,5 @@ Slider.propTypes = {
     PropTypes.node
   ])
 };
+
+Slider.Item = Item;
