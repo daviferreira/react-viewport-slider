@@ -21,6 +21,9 @@ Then:
 ```javascript
 import Slider from ‘react-viewport-slider’;
 
+// http://alpha.wallhaven.cc/wallpaper/164335
+const wallpaper =
+  'http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-164335.png';
 …
 
 	render: function () {
